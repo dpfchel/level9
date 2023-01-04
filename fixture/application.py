@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 from fixture.session import SessionHelper
-#from fixture.group import GroupHelper
+from fixture.james import JamesHelper
 #from fixture.contact import ContactHelper
 from selenium.webdriver.support.ui import Select
 
@@ -24,7 +24,7 @@ class Application:
             raise ValueError("Unrecognazed browser %s" % browser)
         #self.wd.implicitly_wait(5)
         self.session = SessionHelper(self)
-        #self.group = GroupHelper(self)
+        self.james = JamesHelper(self)
         #self.contact = ContactHelper(self)
         self.base_url=base_url
 
